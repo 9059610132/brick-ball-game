@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fcf5f5;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color: #1bc28d;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.paddle {
+    position: absolute;
+    width: 80px;
+    height: 15px;
+    background-color: #db34d5;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Your existing styles */
+
+@media (max-width: 768px) {
+    /* Apply styles when the screen width is 768px or less */
+    .game-container {
+        width: 100%; /* Adjust the width to fill the entire screen */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Apply styles when the screen width is 480px or less */
+    .game-container {
+        right: 10px; /* Move the container to the right side of the screen */
+        left: auto;
+    }
+    .paddle,
+    .ball {
+        left: auto; /* Reset the horizontal position for paddle and ball */
+        right: 50%; /* Move the paddle and ball to the right side of the container */
+        transform: translateX(50%);
+    }
+}
